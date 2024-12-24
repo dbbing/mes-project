@@ -1,0 +1,184 @@
+{
+  "name": "mes-standard",
+  "private": true,
+  "version": "1.42.3",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node ./build/packaging.cjs",
+    "build:limit": "increase-memory-limit && vite build && node ./build/packaging.cjs",
+    "build:tsc": "vue-tsc && vite build",
+    "build:pub": "vite build && node ./build/build.cjs",
+    "build:upload": "node ./build/build.cjs",
+    "preview": "vite preview",
+    "release": "standard-version",
+    "release:alpha": "standard-version --prerelease alpha",
+    "postinstall": "husky install",
+    "commit": "git-cz",
+    "limit": "increase-memory-limit",
+    "translate": "node ./build/i18n.cjs",
+    "translate:tx": "node ./build/tencentTranslate.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.1.222/Supreme-IMD/mes-transistor/mes-project-fe.git"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "@antv/g2plot": "^2.4.31",
+    "@arco-themes/vue-supreme-arco": "^0.0.3",
+    "@icon-park/vue-next": "^1.4.2",
+    "@sv-print/vue3": "^0.1.13",
+    "@types/node": "~18.14.6",
+    "@visactor/vue-vtable": "^1.11.1",
+    "@vueuse/core": "^10.9.0",
+    "@xpyjs/gantt": "^2.1.4",
+    "axios": "^1.6.8",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.10",
+    "echarts": "^5.5.0",
+    "echarts-liquidfill": "^3.1.0",
+    "echarts-wordcloud": "^2.1.0",
+    "file-saver": "^2.0.5",
+    "increase-memory-limit": "^1.0.7",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.1.0",
+    "qrcode": "^1.5.3",
+    "single-line-log": "^1.1.2",
+    "standard-version": "^9.5.0",
+    "tencentcloud-sdk-nodejs-tmt": "^4.0.679",
+    "v-lazy-show": "^0.2.4",
+    "vue": "3.3.0",
+    "vue-draggable-plus": "^0.2.5",
+    "vue-echarts": "^6.6.9",
+    "vue-i18n": "^9.10.2",
+    "vue-request": "^2.0.3",
+    "vue-router": "^4.3.0",
+    "vue-tippy": "^6.4.1",
+    "vuedraggable": "4.1.0",
+    "vxe-table": "^4.5.13",
+    "xe-utils": "^3.5.13"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "2.55.1",
+    "@types/echarts": "^4.9.20",
+    "@types/lodash": "^4.17.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "archiver": "^6.0.1",
+    "atropos": "^1.0.2",
+    "autoprefixer": "^10.4.19",
+    "cz-conventional-changelog-zh": "^0.0.2",
+    "dagre": "^0.8.5",
+    "fs": "^0.0.1-security",
+    "gsap": "^3.12.2",
+    "html2canvas": "^1.4.1",
+    "husky": "^8.0.3",
+    "less": "^4.2.0",
+    "localforage": "^1.10.0",
+    "overlayscrollbars": "^2.6.1",
+    "overlayscrollbars-vue": "^0.5.8",
+    "postcss": "^8.4.38",
+    "postcss-import": "^16.1.0",
+    "qs": "^6.12.0",
+    "sass": "^1.72.0",
+    "scp2": "^0.5.0",
+    "tailwindcss": "^3.4.3",
+    "tdesign-vue-next": "^1.9.3",
+    "tvision-color": "^1.6.0",
+    "typescript": "^5.4.3",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
+    "v-network-graph": "^0.9.15",
+    "vite": "~4.5.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mock-dev-server": "^1.3.3",
+    "vite-plugin-progress": "^0.0.7",
+    "vite-plugin-spa-loading": "^1.2.2",
+    "vite-plugin-vue-devtools": "^7.3.5",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-svg-loader": "^4.0.0",
+    "vue-drag-scroller": "^1.8.1",
+    "vue-tsc": "^1.6.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-zh",
+      "disableScopeLowerCase": false,
+      "disableSubjectLowerCase": false,
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100,
+      "defaultType": "",
+      "defaultScope": "",
+      "defaultSubject": "",
+      "defaultBody": "",
+      "defaultIssues": "",
+      "types": {
+        "feat": {
+          "description": "一个新功能",
+          "title": "Features"
+        },
+        "fix": {
+          "description": "一个bug",
+          "title": "Bug Fixes"
+        },
+        "docs": {
+          "description": "文档增删改",
+          "title": "Documentation"
+        },
+        "type": {
+          "description": "type类型修改",
+          "title": "Type Changes"
+        },
+        "i18n": {
+          "description": "国际化相关",
+          "title": "i18n"
+        },
+        "style": {
+          "description": "样式修改(空白、格式、缺少分号等)",
+          "title": "Styles"
+        },
+        "enhanced": {
+          "description": "针对已有功能的优化",
+          "title": "Code enhanced"
+        },
+        "test": {
+          "description": "增加测试",
+          "title": "Tests"
+        },
+        "build": {
+          "description": "影响构建系统或外部依赖项的更改(示例范围:gulp、broccoli、npm)",
+          "title": "Builds"
+        },
+        "ci": {
+          "description": "对CI配置文件和脚本的更改(示例范围:Travis, Circle, BrowserStack, SauceLabs)",
+          "title": "Continuous Integrations"
+        },
+        "chore": {
+          "description": "除src目录或测试文件以外的修改",
+          "title": "Chores"
+        },
+        "revert": {
+          "description": "回退历史版本",
+          "title": "Reverts"
+        },
+        "conflict": {
+          "description": "修改冲突",
+          "title": "Conflict"
+        },
+        "delete": {
+          "description": "删除文件",
+          "title": "Delete Files"
+        },
+        "stash": {
+          "description": "暂存文件",
+          "title": "Stash Files"
+        }
+      }
+    }
+  }
+}

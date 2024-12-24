@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "vite/client"
+    ],
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": false,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "~/*": [
+        "src/components/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "**/*.ts",
+    "src/types/**/*.d.ts",
+    "src/**/*.tsx",
+    "node_modules/tdesign-vue-next/global.d.ts",
+    "src/**/*.vue",
+    "src/components.d.ts",
+    "src/auto-imports.d.ts", "build/plugin/i18n.cjs",
+  ],
+  "compileOnSave": false,
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
